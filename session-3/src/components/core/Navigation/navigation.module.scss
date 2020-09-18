@@ -1,0 +1,23 @@
+.navigation{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    max-width: 480px;
+    z-index: 1030;
+    border-top: 2px solid #f3f3f3;
+    justify-content: space-around;
+    
+
+    .navigation__item{
+        text-align: center;
+    }
+    svg {
+        width: 24px;
+        height: auto;
+        fill: #0eac32;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

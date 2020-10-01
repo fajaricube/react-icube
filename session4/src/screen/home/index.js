@@ -75,18 +75,19 @@ const Home = ({navigation}) => {
   const {loading:loading1, error:error1, data:data1} = useQuery(GET_PRODUCTS, {
 });
 
-const {loading, error, data} = useQuery(GET_PRODUCTS_PROMO, {
+const {loading:loading2, error:error2, data:data2} = useQuery(GET_PRODUCTS_PROMO, {
 });
+
          
-  if (loading) {
+  if (loading2) {
     return <Text>Loading...</Text>;
   }
-  if (error) {
+  if (error2) {
     return <Text>Error :(</Text>;
   }
   
   const categoryProductList = data1.categoryList[0].products.items;
-  const categoryProductListPromo = data.categoryList[0].products.items;
+  const categoryProductListPromo = data2.categoryList[0].products.items;
 
   return (
     <SafeAreaView style={styles.container}>

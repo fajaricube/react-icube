@@ -72,22 +72,23 @@ query Category {
 `;
 
 const Home = ({navigation}) => {
-  const {loading:loading1, error:error1, data:data1} = useQuery(GET_PRODUCTS, {
-});
+  
 
-const {loading:loading2, error:error2, data:data2} = useQuery(GET_PRODUCTS_PROMO, {
+  const query1  = useQuery(GET_PRODUCTS, {
+});
+  const query2  = useQuery(GET_PRODUCTS_PROMO, {
 });
 
          
-  if (loading2) {
+  if (query1.loading || query2.loading) {
     return <Text>Loading...</Text>;
   }
-  if (error2) {
+  if (query1.error || query2.error) {
     return <Text>Error :(</Text>;
   }
   
-  const categoryProductList = data1.categoryList[0].products.items;
-  const categoryProductListPromo = data2.categoryList[0].products.items;
+  const categoryProductList = query1.data.categoryList[0].products.items;
+  const categoryProductListPromo = query2.data.categoryList[0].products.items;
 
   return (
     <SafeAreaView style={styles.container}>
